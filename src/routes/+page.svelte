@@ -7,7 +7,8 @@
 	let currentWord: string = '';
 	let gameMode: string = '';
 	let scores = [0, 0];
-	let timeRemaining = 30;
+	let maxTime = 30;
+	let timeRemaining = maxTime;
 	let currentGameState: gameState = 'paused';
 	const timer = setInterval(() => {
 		if (currentGameState == 'playing') {
@@ -111,7 +112,7 @@
 				<h2>{timeRemaining}</h2>
 				<button
 					on:click={() => {
-						timeRemaining = 60;
+						timeRemaining = maxTime;
 					}}>reset</button
 				>
 			</div>
