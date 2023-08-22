@@ -85,76 +85,96 @@
 		 	padding: 1rem
 		 "
 		>
-			<p>
+			<p style="margin:0">
 				round type <a href="#" on:click={showRoundTypeAlert}>(?)</a> :
 				<b>{gameMode}</b>
 			</p>
 			<p>think of songs including</p>
 			<h2 style="text-style:bold">{currentWord}</h2>
 			<button on:click={nextWord}>next word</button>
-			<h2>{timeRemaining}</h2>
+		</div>
+		<div
+			style="
+			border-color:forestgreen;
+			border-style: solid;
+			border-width: 0 0 0.5rem 0;
+		 	padding: 1rem
+		 "
+		>
+			<p style="margin: 0">timer</p>
 			<div class="scoreRow">
 				<button
 					on:click={() => {
 						currentGameState = currentGameState == 'playing' ? 'paused' : 'playing';
-					}}>{currentGameState != 'playing' ? 'start' : 'pause'} timer</button
+					}}>{currentGameState != 'playing' ? 'start' : 'pause'}</button
 				>
+				<h2>{timeRemaining}</h2>
 				<button
 					on:click={() => {
 						timeRemaining = 60;
-					}}>reset timer</button
+					}}>reset</button
 				>
 			</div>
 		</div>
-		<div class="scoreRow">
-			<div style="display:flex flex-direction:column">
-				<h3>team 1</h3>
-				<div class="scoreRow">
-					<button
-						disabled={scores[0] == 0}
-						class="scoreButton"
-						on:click={() => {
-							scores[0]--;
-						}}>-</button
-					>
-					<h2 class="scoreValue">{scores[0]}</h2>
-					<button
-						class="scoreButton"
-						on:click={() => {
-							scores[0]++;
-						}}>+</button
-					>
+		<div
+			style="
+			border-color:forestgreen;
+			border-style: solid;
+			border-width: 0 0 0.5rem 0;
+		 	padding: 1rem
+		 "
+		>
+			<p style="margin: 0">scores</p>
+			<div class="scoreRow">
+				<div style="display:flex flex-direction:column">
+					<p>team 1</p>
+					<div class="scoreRow">
+						<button
+							disabled={scores[0] == 0}
+							class="scoreButton"
+							on:click={() => {
+								scores[0]--;
+							}}>-</button
+						>
+						<p class="scoreValue">{scores[0]}</p>
+						<button
+							class="scoreButton"
+							on:click={() => {
+								scores[0]++;
+							}}>+</button
+						>
+					</div>
+				</div>
+				<div style="display:flex flex-direction:column">
+					<p>team 2</p>
+					<div class="scoreRow">
+						<button
+							class="scoreButton"
+							disabled={scores[1] == 0}
+							on:click={() => {
+								scores[1]--;
+							}}>-</button
+						>
+						<p class="scoreValue">{scores[1]}</p>
+						<button
+							class="scoreButton"
+							on:click={() => {
+								scores[1]++;
+							}}>+</button
+						>
+					</div>
 				</div>
 			</div>
-			<div style="display:flex flex-direction:column">
-				<h3>team 2</h3>
-				<div class="scoreRow">
-					<button
-						class="scoreButton"
-						disabled={scores[1] == 0}
-						on:click={() => {
-							scores[1]--;
-						}}>-</button
-					>
-					<h2 class="scoreValue">{scores[1]}</h2>
-					<button
-						class="scoreButton"
-						on:click={() => {
-							scores[1]++;
-						}}>+</button
-					>
-				</div>
-			</div>
+			<a href="#" on:click={showHelp}>how to play</a>
 		</div>
-		<a href="#" on:click={showHelp}>how to play</a>
-	</div>
-</body>
+	</div></body
+>
 
 <style>
 	button {
 		font-size: larger;
 		padding: 1rem;
-		margin: 1rem;
+		margin: 0.5rem;
 	}
 	div {
 		font-family: sans-serif;
@@ -168,6 +188,9 @@
 	}
 	.scoreRow button {
 		padding: 1rem;
-		margin: 1rem;
+		margin: 0.5rem 1rem;
+	}
+	.scoreRow p {
+		margin: 0.5rem 0;
 	}
 </style>
