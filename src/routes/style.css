@@ -1,0 +1,53 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 5rem;
+
+  @media only screen and (max-device-width: 750px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 8rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+
+  @media only screen and (max-device-width: 750px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 4rem;
+  }
+}
+
+p {
+  display: flex;
+  font-size: 3rem;
+
+  @media only screen and (max-device-width: 750px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 6rem;
+  }
+}
+
+.scoreRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  margin-block: 0;
+}
+
+.scoreValue {
+  margin: 0;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 5rem;
+
+  @media only screen and (max-device-width: 750px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 6rem;
+  }
+}
