@@ -11,7 +11,7 @@
 	let timeRemaining = maxTime;
 	let currentGameState: gameState = 'paused';
 	const timer = setInterval(() => {
-		if (currentGameState == 'playing') {
+		if (currentGameState == 'playing' && timeRemaining > 0) {
 			timeRemaining--;
 		}
 	}, 1000);
